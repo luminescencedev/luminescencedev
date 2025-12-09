@@ -21,8 +21,8 @@
 
 <div align="center">
   
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=luminescencedev&hide_border=true&show_icons=true&theme=tokyonight&bg_color=FF000000&text_color=777777" alt="GitHub Stats">
-  <img width="49%" src="http://github-readme-streak-stats.herokuapp.com?user=luminescencedev&theme=tokyonight&hide_border=true&dates=777777&background=FF000000" alt="GitHub Streak">
+  <img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=luminescencedev&hide_border=true&show_icons=true&theme=tokyonight&bg_color=00000000&text_color=777777&title_color=777777&icon_color=777777" alt="GitHub Stats">
+  <img width="49%" src="https://streak-stats.demolab.com?user=luminescencedev&theme=tokyonight&hide_border=true&date_format=j%20M%5B%20Y%5D&ring=777777&fire=777777&currStreakLabel=777777&background=00000000" alt="GitHub Streak">
   
 </div>
 
