@@ -1,14 +1,11 @@
 name: Metrics
 on:
-  # Mise à jour toutes les 6 heures
   schedule: [{cron: "0 */6 * * *"}]
-  # Permet de lancer manuellement
   workflow_dispatch:
-  # Lance à chaque push
   push: {branches: ["master", "main"]}
 
 jobs:
-  # Métriques principales (classique)
+  # Métriques principales
   github-metrics:
     runs-on: ubuntu-latest
     permissions:
@@ -33,29 +30,9 @@ jobs:
           
           # Plugin lignes de code
           plugin_lines: yes
-          plugin_lines_history_limit: 1
-          plugin_lines_repositories_limit: 4
-          plugin_lines_sections: base
-          
-          # Plugin contributions notables
-          plugin_notable: yes
-          plugin_notable_from: organization
-          plugin_notable_types: commit
-          
-          # Plugin habitudes de code
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
-          plugin_habits_trim: yes
-          
-          # Repositories featured
-          plugin_repositories: yes
-          plugin_repositories_featured: luminescencedev/luminescencedev
 
-  # Calendrier isométrique (demi-année)
-  github-metrics-isocalendar:
+  # Calendrier isométrique (6 mois)
+  isocalendar-halfyear:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -70,7 +47,7 @@ jobs:
           plugin_isocalendar_duration: half-year
 
   # Calendrier isométrique (année complète)
-  github-metrics-isocalendar-full:
+  isocalendar-fullyear:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -84,8 +61,8 @@ jobs:
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
 
-  # Activité récente
-  github-metrics-activity:
+  # Activité récente (configuration correcte)
+  activity:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -98,13 +75,14 @@ jobs:
           base: ""
           plugin_activity: yes
           plugin_activity_limit: 5
+          plugin_activity_load: 300
           plugin_activity_days: 14
-          plugin_activity_filter: all
+          plugin_activity_filter: issue, pr, release, push, review, ref/create
           plugin_activity_visibility: all
-          plugin_activity_timestamps: yes
+          plugin_activity_timestamps: no
 
-  # Achievements
-  github-metrics-achievements:
+  # Achievements (configuration correcte)
+  achievements:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -119,3 +97,4 @@ jobs:
           plugin_achievements_display: compact
           plugin_achievements_secrets: yes
           plugin_achievements_threshold: C
+          plugin_achievements_limit: 0
