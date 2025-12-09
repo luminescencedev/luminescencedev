@@ -5,12 +5,12 @@
 > _If you're here, thanks for watching the work unfold from the shadows._
 
 <table border="0" cellspacing="0" cellpadding="0">
-  <tr> 
-    <td valign="top">
+  <tr style="border: none"> 
+    <td valign="top" style="border: none">
       <img width="400" src="https://raw.githubusercontent.com/luminescencedev/luminescencedev/main/github-metrics.svg" alt="GitHub metrics"><br>
       <img width="400" src="https://raw.githubusercontent.com/luminescencedev/luminescencedev/main/metrics.plugin.isocalendar.svg" alt="Isometric activity calendar">
     </td>
-    <td valign="top">
+    <td valign="top" style="border: none">
       <img width="400" src="https://raw.githubusercontent.com/luminescencedev/luminescencedev/main/kuroro.png" alt="kuroro">
     </td>
   </tr>
