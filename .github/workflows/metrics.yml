@@ -45,14 +45,6 @@ jobs:
           plugin_lines_repositories_limit: 4
           plugin_lines_sections: base
 
-          # 💡 Habitudes intégrées dans la carte principale
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
-          plugin_habits_trim: yes
-
   # 📅 Calendrier isométrique
   isocalendar:
     runs-on: ubuntu-latest
@@ -68,42 +60,3 @@ jobs:
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
-
-  # ⚙️ Habitudes de codage (fichiers dédiés charts + facts)
-  habits:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-      - uses: actions/checkout@v4
-
-      # 📊 Graphiques d’habitudes (heures, jours, etc.)
-      - name: Generate habits charts
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.habits.charts.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: luminescencedev
-          base: ""
-          plugin_habits: yes
-          plugin_habits_charts: yes
-          plugin_habits_facts: no
-          plugin_habits_from: 300
-          plugin_habits_days: 14
-          config_timezone: Europe/Paris
-
-      # 🤓 Mildly interesting facts
-      - name: Generate habits facts
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.habits.facts.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: luminescencedev
-          base: ""
-          plugin_habits: yes
-          plugin_habits_charts: no
-          plugin_habits_facts: yes
-          plugin_habits_from: 300
-          plugin_habits_days: 14
-          config_timezone: Europe/Paris
