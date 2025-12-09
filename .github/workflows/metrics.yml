@@ -1,18 +1,25 @@
 name: Metrics
+
 on:
   # Mise à jour automatique toutes les 12 heures
-  schedule: [{cron: "0 */12 * * *"}]
-  # Permet le lancement manuel
+  schedule:
+    - cron: "0 */12 * * *"
+
+  # Lancement manuel
   workflow_dispatch:
-  # Lance à chaque push sur main
-  push: {branches: ["main"]}
+
+  # À chaque push sur main
+  push:
+    branches:
+      - main
 
 jobs:
-  # Métriques principales avec langages et statistiques
+  # 🧮 Métriques principales (profil + langages + stats + habitudes)
   github-metrics:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -23,7 +30,7 @@ jobs:
           base: header, activity, community, repositories, metadata
           config_timezone: Europe/Paris
 
-          # Plugin langages
+          # 🔤 Langages
           plugin_languages: yes
           plugin_languages_analysis_timeout: 15
           plugin_languages_categories: markup, programming
@@ -32,13 +39,13 @@ jobs:
           plugin_languages_sections: most-used
           plugin_languages_threshold: 0%
 
-          # Plugin lignes de code
+          # 📏 Lignes de code
           plugin_lines: yes
           plugin_lines_history_limit: 1
           plugin_lines_repositories_limit: 4
           plugin_lines_sections: base
 
-          # Plugin habitudes (intégré aux métriques principales)
+          # 💡 Habitudes intégrées dans la carte principale
           plugin_habits: yes
           plugin_habits_from: 200
           plugin_habits_days: 14
@@ -46,11 +53,12 @@ jobs:
           plugin_habits_charts: yes
           plugin_habits_trim: yes
 
-  # Calendrier isométrique (half-year pour layout compact)
+  # 📅 Calendrier isométrique
   isocalendar:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -61,15 +69,16 @@ jobs:
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
 
-  # Habitudes de codage (fichiers dédiés pour charts + facts)
+  # ⚙️ Habitudes de codage (fichiers dédiés charts + facts)
   habits:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - uses: actions/checkout@v4
 
-      # Génère les graphiques d'habitudes (heures actives, jours, etc.)
+      # 📊 Graphiques d’habitudes (heures, jours, etc.)
       - name: Generate habits charts
         uses: lowlighter/metrics@latest
         with:
@@ -84,7 +93,7 @@ jobs:
           plugin_habits_days: 14
           config_timezone: Europe/Paris
 
-      # Génère les "mildly interesting facts"
+      # 🤓 Mildly interesting facts
       - name: Generate habits facts
         uses: lowlighter/metrics@latest
         with:
