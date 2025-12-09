@@ -1,8 +1,8 @@
-# 💫 luminescencedev
+# luminescencedev
 
-> Always grinding — sometimes solo, sometimes with the crew.  
-> _I code daily — shipping tools, bots, and ideas that grow in silence. Not for the streak, but for the vision._  
-> _Thanks for watching from the shadows — it means a lot!_  
+> I design and build interfaces I’d want to use.  
+> _From pixels to backends — turning ideas into full-stack apps built in silence._  
+> _If you're here, thanks for watching the work unfold from the shadows._
 
 <br>
 
@@ -14,9 +14,10 @@
         <img width="400" src="https://raw.githubusercontent.com/luminescencedev/luminescencedev/main/metrics.plugin.isocalendar.svg" alt="Isometric activity calendar">
       </td>
       <td valign="top" align="center">
-        <img width="400" src="https://raw.githubusercontent.com/luminescencedev/luminescencedev/main/metrics.plugin.habits.charts.svg" alt="Coding habits charts"><br>
-        <img width="400" src="https://raw.githubusercontent.com/luminescencedev/luminescencedev/main/metrics.plugin.habits.facts.svg" alt="Coding habits facts">
-      </td>
+        <!-- <img width="400" src="https://raw.githubusercontent.com/luminescencedev/luminescencedev/main/metrics.plugin.habits.charts.svg" alt="Coding habits charts"><br>
+        <img width="400" src="https://raw.githubusercontent.com/luminescencedev/luminescencedev/main/metrics.plugin.habits.facts.svg" alt="Coding habits facts">-->
+        <img width="400" src="https://raw.githubusercontent.com/luminescencedev/luminescencedev/main/kuroro.png" alt="kuroro">
+      </td> 
     </tr>
   </table>
 </div>
