@@ -6,7 +6,7 @@
 
 <br>
 
-[<img align="left" width="390" alt="🌟" src="https://raw.githubusercontent.com/luminescencedev/luminescencedev/main/github-metrics.svg">](#)
+[<img align="left" width="390" alt="🌟" src="https://raw.githubusercontent.com/luminescnencedev/metrics/master/metrics.classic.svg">](#)
 
 [<img align="right" width="390" alt="🌟" src="https://github-readme-stats.vercel.app/api?username=luminescencedev&hide_border=true&show_icons=true&theme=tokyonight&bg_color=FF000000&text_color=777777">](#)
 
